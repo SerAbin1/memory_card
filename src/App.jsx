@@ -17,6 +17,7 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(false)
+  const [showAll, setShowAll] = useState(true)
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -27,6 +28,10 @@ function App() {
     setChoiceTwo(null)
     setCards(shuffledCards)
     setTurns(0)
+    setShowAll(true)
+    setTimeout(() => {
+      setShowAll(false)
+    }, 500)
   }
 
   // handle choice
@@ -77,7 +82,12 @@ function App() {
             key={card.id}
             card={card}
             handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
+            flipped={
+              showAll ||
+              card === choiceOne ||
+              card === choiceTwo ||
+              card.matched
+            }
             disabled={disabled}
           />
         ))}

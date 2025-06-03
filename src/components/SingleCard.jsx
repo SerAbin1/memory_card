@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import "./SingleCard.css"
 
 const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
@@ -7,6 +8,7 @@ const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
       handleChoice(card)
     }
   }
+
 
   return (
     <div className="card">
