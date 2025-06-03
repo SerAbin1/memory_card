@@ -74,6 +74,7 @@ function App() {
   return (
     <div className="App">
       <h1>Magic Match</h1>
+      <p>Complete in 7 or less turns</p>
       <button onClick={shuffleCards}>New Game</button>
 
       <div className="card-grid">
