@@ -2,13 +2,11 @@ import { useEffect } from "react"
 import "./SingleCard.css"
 
 const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
-
   const handleClick = () => {
     if (!disabled) {
       handleChoice(card)
     }
   }
-
 
   return (
     <div className="card">
@@ -16,7 +14,7 @@ const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
         <img className="front" src={card.src} alt="card front" />
         <img
           className="back"
-          src="/img/cover.png"
+          src="/img/newcover.webp"
           onClick={handleClick}
           alt="card back"
         />
